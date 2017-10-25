@@ -21,7 +21,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "http-server -p 9000"
+    "start": "http-server -p 9000",
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
