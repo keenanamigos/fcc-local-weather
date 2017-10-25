@@ -1,0 +1,36 @@
+{
+  "name": "local-weather",
+  "version": "1.0.0",
+  "description": "Free Code Camp - Local Weather",
+  "main": "index.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "chai": "^4.1.2",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "grunt-babel": "^7.0.0",
+    "http-server": "^0.10.0",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "http-server -p 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenanamigos/fcc-local-weather.git"
+  },
+  "author": "keenan johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keenanamigos/fcc-local-weather/issues"
+  },
+  "homepage": "https://github.com/keenanamigos/fcc-local-weather#readme"
+}
