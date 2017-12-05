@@ -21,12 +21,12 @@ export class Weather {
 
     /* Should take a temperature and a string containing the measurement */
     static convertFarenheitToCelsius(temperature) {
-        // Update
+        return Math.round(((5 /9) * (temperature - 32)));
     }
 
     /* Should take a temperature and a string containing the measurement */
     static convertCelsiusToFarenheit(temperature) {
-        // Update
+        return Math.round(((9 * temperature + (32 * 5)) / 5));
     }
     static setHTML(data) {
         const weatherData = WeatherData.create(data);

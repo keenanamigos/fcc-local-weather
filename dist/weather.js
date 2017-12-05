@@ -39,16 +39,16 @@ var Weather = exports.Weather = function () {
 
     }, {
         key: "convertFarenheitToCelsius",
-        value: function convertFarenheitToCelsius(temperature) {}
-        // Update
-
+        value: function convertFarenheitToCelsius(temperature) {
+            return Math.round(5 / 9 * (temperature - 32));
+        }
 
         /* Should take a temperature and a string containing the measurement */
 
     }, {
         key: "convertCelsiusToFarenheit",
         value: function convertCelsiusToFarenheit(temperature) {
-            // Update
+            return Math.round((9 * temperature + 32 * 5) / 5);
         }
     }, {
         key: "setHTML",
