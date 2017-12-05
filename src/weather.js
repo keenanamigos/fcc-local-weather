@@ -19,12 +19,10 @@ export class Weather {
         Weather.setHTML(weatherData);
     }
 
-    /* Should take a temperature and a string containing the measurement */
     static convertFarenheitToCelsius(temperature) {
         return Math.round(((5 /9) * (temperature - 32)));
     }
 
-    /* Should take a temperature and a string containing the measurement */
     static convertCelsiusToFarenheit(temperature) {
         return Math.round(((9 * temperature + (32 * 5)) / 5));
     }

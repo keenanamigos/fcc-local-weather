@@ -34,17 +34,11 @@ var Weather = exports.Weather = function () {
 
             Weather.setHTML(weatherData);
         }
-
-        /* Should take a temperature and a string containing the measurement */
-
     }, {
         key: "convertFarenheitToCelsius",
         value: function convertFarenheitToCelsius(temperature) {
             return Math.round(5 / 9 * (temperature - 32));
         }
-
-        /* Should take a temperature and a string containing the measurement */
-
     }, {
         key: "convertCelsiusToFarenheit",
         value: function convertCelsiusToFarenheit(temperature) {
