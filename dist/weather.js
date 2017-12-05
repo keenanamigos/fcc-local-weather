@@ -30,16 +30,21 @@ var Weather = exports.Weather = function () {
                 weatherStatus: response.weather[0].main,
                 temp: response.main.temp,
                 icon: response.weather[0].icon
-            };
 
-            Weather.setHTML(weatherData);
-            console.log(weatherData);
+                // Weather.setHTML(weatherData);
+            };
         }
+
+        /* Should take a temperature and a string containing the measurement */
+
     }, {
         key: "convertFarenheitToCelsius",
-        value: function convertFarenheitToCelsius(temperature) {
-            // Update
-        }
+        value: function convertFarenheitToCelsius(temperature) {}
+        // Update
+
+
+        /* Should take a temperature and a string containing the measurement */
+
     }, {
         key: "convertCelsiusToFarenheit",
         value: function convertCelsiusToFarenheit(temperature) {
@@ -49,8 +54,7 @@ var Weather = exports.Weather = function () {
         key: "setHTML",
         value: function setHTML(data) {
             var WeatherData = new WeatherData(data);
-            console.log(weatherData);
-            // Set whatever html attributes or values I need below
+            // Update
         }
     }]);
 

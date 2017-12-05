@@ -1,5 +1,6 @@
+/* global describe it */
 const expect = require("chai").expect;
-const Weather = require("../src/weather").Weather;
+const Weather = require("../dist/weather").Weather;
 
 describe("Weather", () => {
     describe("convertFarenheitToCelsius", () => {
@@ -7,6 +8,6 @@ describe("Weather", () => {
     });
 
     describe("convertCelsiusToFarenheit", () => {
-        it("should convert a temperature ")
+        
     });
 });
