@@ -6,7 +6,7 @@ export class WeatherData {
         this.country = args.country,
         this.weatherStatus = args.weatherStatus,
         this.temperature = args.temp,
-        this.icon = args.weatherIcon
+        this.icon = args.icon
     }
 
     static create(data) {

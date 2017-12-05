@@ -14,7 +14,7 @@ var WeatherData = exports.WeatherData = function () {
     function WeatherData(args) {
         _classCallCheck(this, WeatherData);
 
-        this.city = args.city, this.country = args.country, this.weatherStatus = args.weatherStatus, this.temperature = args.temp, this.icon = args.weatherIcon;
+        this.city = args.city, this.country = args.country, this.weatherStatus = args.weatherStatus, this.temperature = args.temp, this.icon = args.icon;
     }
 
     _createClass(WeatherData, null, [{

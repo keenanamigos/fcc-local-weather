@@ -30,9 +30,9 @@ var Weather = exports.Weather = function () {
                 weatherStatus: response.weather[0].main,
                 temp: response.main.temp,
                 icon: response.weather[0].icon
-
-                // Weather.setHTML(weatherData);
             };
+
+            Weather.setHTML(weatherData);
         }
 
         /* Should take a temperature and a string containing the measurement */
@@ -53,7 +53,7 @@ var Weather = exports.Weather = function () {
     }, {
         key: "setHTML",
         value: function setHTML(data) {
-            var WeatherData = new WeatherData(data);
+            var weatherData = WeatherData.create(data);
             // Update
         }
     }]);

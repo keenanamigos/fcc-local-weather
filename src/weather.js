@@ -16,7 +16,7 @@ export class Weather {
             icon: response.weather[0].icon
         }
         
-        // Weather.setHTML(weatherData);
+        Weather.setHTML(weatherData);
     }
 
     /* Should take a temperature and a string containing the measurement */
@@ -29,7 +29,7 @@ export class Weather {
         // Update
     }
     static setHTML(data) {
-        const WeatherData = new WeatherData(data);
+        const weatherData = WeatherData.create(data);
         // Update
     }
 }
