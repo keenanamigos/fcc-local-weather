@@ -53,16 +53,19 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = weatherData.temperature;
+			temperature.innerHTML = weatherData.temperature + " &deg<button class=\"temp-btn\" id=\"tempUnit\"><span class=\"temp-btn-text\">C</span></button>";
 
 			var weatherStatus = document.getElementById("weatherStatus");
 			weatherStatus.innerHTML = weatherData.weatherStatus;
+			weatherStatus.className = "weatherStatus";
 
 			var icon = document.getElementById("icon");
 			icon.src = weatherData.icon;
 			icon.alt = "icon for the current weather conditons";
+			icon.className = "icon";
 		}
 	}]);
 
 	return Weather;
 }();
+//# sourceMappingURL=weather.js.map

@@ -28,3 +28,4 @@ var WeatherData = exports.WeatherData = function () {
 
 	return WeatherData;
 }();
+//# sourceMappingURL=weatherData.js.map

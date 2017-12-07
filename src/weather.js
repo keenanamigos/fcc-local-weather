@@ -33,14 +33,16 @@ export class Weather {
 		cityCountry.innerHTML = `${weatherData.city}, ${weatherData.country}`;
 
 		const temperature = document.getElementById("temperature");
-		temperature.innerHTML = weatherData.temperature;
+		temperature.innerHTML = `${weatherData.temperature} &deg<button class="temp-btn" id="tempUnit"><span class="temp-btn-text">C</span></button>`;
         
 		const weatherStatus = document.getElementById("weatherStatus");
 		weatherStatus.innerHTML = weatherData.weatherStatus;
+		weatherStatus.className = "weatherStatus";
 
 		const icon = document.getElementById("icon");
 		icon.src = weatherData.icon;
 		icon.alt = "icon for the current weather conditons";
+		icon.className = "icon";
 	}
 }
 
