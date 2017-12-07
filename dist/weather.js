@@ -48,9 +48,21 @@ var Weather = exports.Weather = function () {
         key: "setHTML",
         value: function setHTML(data) {
             var weatherData = WeatherData.create(data);
-            // Update
+
+            var cityCountry = document.getElementById("cityCountry");
+            cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
+
+            var temperature = document.getElementById("temperature");
+            temperature.innerHTML = weatherData.temperature;
+
+            var weatherStatus = document.getElementById("weatherStatus");
+            weatherStatus.innerHTML = weatherData.weatherStatus;
+
+            var icon = document.getElementById("icon");
+            icon.src = weatherData.icon;
         }
     }]);
 
     return Weather;
 }();
+//# sourceMappingURL=weather.js.map
