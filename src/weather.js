@@ -28,7 +28,18 @@ export class Weather {
     }
     static setHTML(data) {
         const weatherData = WeatherData.create(data);
-        // Update
+        
+        const cityCountry = document.getElementById("cityCountry");
+        cityCountry.innerHTML = `${weatherData.city}, ${weatherData.country}`;
+
+        const temperature = document.getElementById("temperature");
+        temperature.innerHTML = weatherData.temperature;
+        
+        const weatherStatus = document.getElementById("weatherStatus");
+        weatherStatus.innerHTML = weatherData.weatherStatus;
+
+        const icon = document.getElementById("icon");
+        icon.src = weatherData.icon;
     }
 }
 

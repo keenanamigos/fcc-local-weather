@@ -81,6 +81,8 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
     Weather.getWeatherByLatLong(data);
 });
+//# sourceMappingURL=main.js.map
+
 
 /***/ }),
 /* 1 */
@@ -137,12 +139,25 @@ var Weather = exports.Weather = function () {
         key: "setHTML",
         value: function setHTML(data) {
             var weatherData = WeatherData.create(data);
-            // Update
+
+            var cityCountry = document.getElementById("cityCountry");
+            cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
+
+            var temperature = document.getElementById("temperature");
+            temperature.innerHTML = weatherData.temperature;
+
+            var weatherStatus = document.getElementById("weatherStatus");
+            weatherStatus.innerHTML = weatherData.weatherStatus;
+
+            var icon = document.getElementById("icon");
+            icon.src = weatherData.icon;
         }
     }]);
 
     return Weather;
 }();
+//# sourceMappingURL=weather.js.map
+
 
 /***/ }),
 /* 2 */
@@ -179,6 +194,8 @@ var WeatherData = exports.WeatherData = function () {
 
     return WeatherData;
 }();
+//# sourceMappingURL=weatherData.js.map
+
 
 /***/ }),
 /* 3 */
@@ -215,6 +232,8 @@ var ObjectHelper = exports.ObjectHelper = function () {
 
 	return ObjectHelper;
 }();
+//# sourceMappingURL=objectHelper.js.map
+
 
 /***/ })
 /******/ ]);
