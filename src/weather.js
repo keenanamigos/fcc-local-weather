@@ -28,7 +28,9 @@ export class Weather {
     }
     static setHTML(data) {
         const weatherData = WeatherData.create(data);
-        // Update
+        
+        let city = document.getElementById("city");
+        city.innerHTML = weatherData.city;
     }
 }
 
