@@ -73,16 +73,14 @@
 var Weather = __webpack_require__(1).Weather;
 
 navigator.geolocation.getCurrentPosition(function (position) {
-    var data = {
-        endpoint: "https://fcc-weather-api.glitch.me/",
-        longitude: position.coords.longitude,
-        latitude: position.coords.latitude
-    };
+	var data = {
+		endpoint: "https://fcc-weather-api.glitch.me/",
+		longitude: position.coords.longitude,
+		latitude: position.coords.latitude
+	};
 
-    Weather.getWeatherByLatLong(data);
+	Weather.getWeatherByLatLong(data);
 });
-//# sourceMappingURL=main.js.map
-
 
 /***/ }),
 /* 1 */
@@ -92,7 +90,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -102,62 +100,60 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var WeatherData = __webpack_require__(2).WeatherData;
 
 var Weather = exports.Weather = function () {
-    function Weather() {
-        _classCallCheck(this, Weather);
-    }
+	function Weather() {
+		_classCallCheck(this, Weather);
+	}
 
-    _createClass(Weather, null, [{
-        key: "getWeatherByLatLong",
-        value: function getWeatherByLatLong(data) {
-            var xhr = new XMLHttpRequest();
-            var route = "api/current?lon=" + data.longitude + "&lat=" + data.latitude;
-            xhr.open("GET", "" + data.endpoint + route, false);
-            xhr.send();
-            var response = JSON.parse(xhr.responseText);
+	_createClass(Weather, null, [{
+		key: "getWeatherByLatLong",
+		value: function getWeatherByLatLong(data) {
+			var xhr = new XMLHttpRequest();
+			var route = "api/current?lon=" + data.longitude + "&lat=" + data.latitude;
+			xhr.open("GET", "" + data.endpoint + route, false);
+			xhr.send();
+			var response = JSON.parse(xhr.responseText);
 
-            var weatherData = {
-                city: response.name,
-                country: response.sys.country,
-                weatherStatus: response.weather[0].main,
-                temp: response.main.temp,
-                icon: response.weather[0].icon
-            };
+			var weatherData = {
+				city: response.name,
+				country: response.sys.country,
+				weatherStatus: response.weather[0].main,
+				temp: response.main.temp,
+				icon: response.weather[0].icon
+			};
 
-            Weather.setHTML(weatherData);
-        }
-    }, {
-        key: "convertFarenheitToCelsius",
-        value: function convertFarenheitToCelsius(temperature) {
-            return Math.round(5 / 9 * (temperature - 32));
-        }
-    }, {
-        key: "convertCelsiusToFarenheit",
-        value: function convertCelsiusToFarenheit(temperature) {
-            return Math.round((9 * temperature + 32 * 5) / 5);
-        }
-    }, {
-        key: "setHTML",
-        value: function setHTML(data) {
-            var weatherData = WeatherData.create(data);
+			Weather.setHTML(weatherData);
+		}
+	}, {
+		key: "convertFarenheitToCelsius",
+		value: function convertFarenheitToCelsius(temperature) {
+			return Math.round(5 / 9 * (temperature - 32));
+		}
+	}, {
+		key: "convertCelsiusToFarenheit",
+		value: function convertCelsiusToFarenheit(temperature) {
+			return Math.round((9 * temperature + 32 * 5) / 5);
+		}
+	}, {
+		key: "setHTML",
+		value: function setHTML(data) {
+			var weatherData = WeatherData.create(data);
 
-            var cityCountry = document.getElementById("cityCountry");
-            cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
+			var cityCountry = document.getElementById("cityCountry");
+			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
-            var temperature = document.getElementById("temperature");
-            temperature.innerHTML = weatherData.temperature;
+			var temperature = document.getElementById("temperature");
+			temperature.innerHTML = weatherData.temperature;
 
-            var weatherStatus = document.getElementById("weatherStatus");
-            weatherStatus.innerHTML = weatherData.weatherStatus;
+			var weatherStatus = document.getElementById("weatherStatus");
+			weatherStatus.innerHTML = weatherData.weatherStatus;
 
-            var icon = document.getElementById("icon");
-            icon.src = weatherData.icon;
-        }
-    }]);
+			var icon = document.getElementById("icon");
+			icon.src = weatherData.icon;
+		}
+	}]);
 
-    return Weather;
+	return Weather;
 }();
-//# sourceMappingURL=weather.js.map
-
 
 /***/ }),
 /* 2 */
@@ -167,7 +163,7 @@ var Weather = exports.Weather = function () {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -177,25 +173,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var ObjectHelper = __webpack_require__(3).ObjectHelper;
 
 var WeatherData = exports.WeatherData = function () {
-    function WeatherData(args) {
-        _classCallCheck(this, WeatherData);
+	function WeatherData(args) {
+		_classCallCheck(this, WeatherData);
 
-        this.city = args.city, this.country = args.country, this.weatherStatus = args.weatherStatus, this.temperature = args.temp, this.icon = args.icon;
-    }
+		this.city = args.city, this.country = args.country, this.weatherStatus = args.weatherStatus, this.temperature = args.temp, this.icon = args.icon;
+	}
 
-    _createClass(WeatherData, null, [{
-        key: "create",
-        value: function create(data) {
-            if (!ObjectHelper.isObjectNullOrEmpty(data)) {
-                return new WeatherData(data);
-            }
-        }
-    }]);
+	_createClass(WeatherData, null, [{
+		key: "create",
+		value: function create(data) {
+			if (!ObjectHelper.isObjectNullOrEmpty(data)) {
+				return new WeatherData(data);
+			}
+		}
+	}]);
 
-    return WeatherData;
+	return WeatherData;
 }();
-//# sourceMappingURL=weatherData.js.map
-
 
 /***/ }),
 /* 3 */
@@ -232,8 +226,6 @@ var ObjectHelper = exports.ObjectHelper = function () {
 
 	return ObjectHelper;
 }();
-//# sourceMappingURL=objectHelper.js.map
-
 
 /***/ })
 /******/ ]);
