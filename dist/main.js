@@ -149,6 +149,7 @@ var Weather = exports.Weather = function () {
 
 			var icon = document.getElementById("icon");
 			icon.src = weatherData.icon;
+			icon.alt = "icon for the current weather conditons";
 		}
 	}]);
 

@@ -40,6 +40,7 @@ export class Weather {
 
 		const icon = document.getElementById("icon");
 		icon.src = weatherData.icon;
+		icon.alt = "icon for the current weather conditons";
 	}
 }
 

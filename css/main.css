@@ -1,10 +1,11 @@
 body {
     background-color: #161616;
     color: white;
+    font-family: "Roboto", sans-serif;
 }
 
-.container {
-    
+p {
+    font-size: 1.575rem;
 }
 
 h1 {
