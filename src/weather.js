@@ -3,6 +3,10 @@ const WeatherData = require("./weatherData").WeatherData;
 export class Weather {
 	static getWeatherByLatLong(data) {
 		const xhr = new XMLHttpRequest();
+		xhr.addEventListener("load", () => {
+			const loading = document.getElementsByClassName("loading")[0];
+			loading.style.display = "none";
+		});
 		const route = `api/current?lon=${data.longitude}&lat=${data.latitude}`;
 		xhr.open("GET", `${data.endpoint}${route}`, false);
 		xhr.send();

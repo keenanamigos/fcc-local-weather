@@ -19,6 +19,10 @@ var Weather = exports.Weather = function () {
 		key: "getWeatherByLatLong",
 		value: function getWeatherByLatLong(data) {
 			var xhr = new XMLHttpRequest();
+			xhr.addEventListener("load", function () {
+				var loading = document.getElementsByClassName("loading")[0];
+				loading.style.display = "none";
+			});
 			var route = "api/current?lon=" + data.longitude + "&lat=" + data.latitude;
 			xhr.open("GET", "" + data.endpoint + route, false);
 			xhr.send();
