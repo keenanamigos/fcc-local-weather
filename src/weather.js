@@ -6,6 +6,9 @@ export class Weather {
 		xhr.addEventListener("load", () => {
 			const loading = document.getElementsByClassName("loading")[0];
 			loading.style.display = "none";
+
+			const loadingAnimation = document.getElementsByClassName("loader")[0];
+			loadingAnimation.style.display = "none";
 		});
 		const route = `api/current?lon=${data.longitude}&lat=${data.latitude}`;
 		xhr.open("GET", `${data.endpoint}${route}`, false);

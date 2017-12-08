@@ -22,6 +22,9 @@ var Weather = exports.Weather = function () {
 			xhr.addEventListener("load", function () {
 				var loading = document.getElementsByClassName("loading")[0];
 				loading.style.display = "none";
+
+				var loadingAnimation = document.getElementsByClassName("loader")[0];
+				loadingAnimation.style.display = "none";
 			});
 			var route = "api/current?lon=" + data.longitude + "&lat=" + data.latitude;
 			xhr.open("GET", "" + data.endpoint + route, false);
