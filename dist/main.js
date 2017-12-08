@@ -73,7 +73,7 @@
 var Weather = __webpack_require__(1).Weather;
 
 navigator.geolocation.getCurrentPosition(function (position) {
-	var isFarenheit = false;
+	var isFahrenheit = false;
 
 	var data = {
 		endpoint: "https://fcc-weather-api.glitch.me/",
@@ -85,19 +85,19 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
 	var tempBtn = document.getElementById("tempUnit");
 	tempBtn.onclick = function () {
-		isFarenheit = !isFarenheit;
-		switchMeasurements(isFarenheit);
+		switchMeasurements(isFahrenheit);
+		isFahrenheit = !isFahrenheit;
 	};
 });
 
 function switchMeasurements(measurementBool) {
-	var temperature = parseFloat(document.getElementById("temperature").innerHTML);
+	var temperature = parseInt(document.getElementById("temperature").innerHTML, 10);
 
 	if (measurementBool) {
-		document.getElementById("temperature").innerHTML = Weather.convertFarenheitToCelsius(temperature);
+		document.getElementById("temperature").innerHTML = Weather.convertFahrenheitToCelsius(temperature);
 		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "C";
 	} else {
-		document.getElementById("temperature").innerHTML = Weather.convertCelsiusToFarenheit(temperature);
+		document.getElementById("temperature").innerHTML = Weather.convertCelsiusToFahrenheit(temperature);
 		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "F";
 	}
 }
@@ -144,13 +144,13 @@ var Weather = exports.Weather = function () {
 			Weather.setHTML(weatherData);
 		}
 	}, {
-		key: "convertFarenheitToCelsius",
-		value: function convertFarenheitToCelsius(temperature) {
+		key: "convertFahrenheitToCelsius",
+		value: function convertFahrenheitToCelsius(temperature) {
 			return Math.round(5 / 9 * (temperature - 32));
 		}
 	}, {
-		key: "convertCelsiusToFarenheit",
-		value: function convertCelsiusToFarenheit(temperature) {
+		key: "convertCelsiusToFahrenheit",
+		value: function convertCelsiusToFahrenheit(temperature) {
 			return Math.round((9 * temperature + 32 * 5) / 5);
 		}
 	}, {
@@ -162,7 +162,7 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = "" + weatherData.temperature.toFixed(1);
+			temperature.innerHTML = "" + weatherData.temperature.toFixed(0);
 
 			var degree = document.getElementById("degree");
 			degree.innerHTML = "&deg";

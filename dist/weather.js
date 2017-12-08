@@ -35,13 +35,13 @@ var Weather = exports.Weather = function () {
 			Weather.setHTML(weatherData);
 		}
 	}, {
-		key: "convertFarenheitToCelsius",
-		value: function convertFarenheitToCelsius(temperature) {
+		key: "convertFahrenheitToCelsius",
+		value: function convertFahrenheitToCelsius(temperature) {
 			return Math.round(5 / 9 * (temperature - 32));
 		}
 	}, {
-		key: "convertCelsiusToFarenheit",
-		value: function convertCelsiusToFarenheit(temperature) {
+		key: "convertCelsiusToFahrenheit",
+		value: function convertCelsiusToFahrenheit(temperature) {
 			return Math.round((9 * temperature + 32 * 5) / 5);
 		}
 	}, {
@@ -53,7 +53,7 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = "" + weatherData.temperature.toFixed(1);
+			temperature.innerHTML = "" + weatherData.temperature.toFixed(0);
 
 			var degree = document.getElementById("degree");
 			degree.innerHTML = "&deg";

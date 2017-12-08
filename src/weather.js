@@ -19,11 +19,11 @@ export class Weather {
 		Weather.setHTML(weatherData);
 	}
 
-	static convertFarenheitToCelsius(temperature) {
+	static convertFahrenheitToCelsius(temperature) {
 		return Math.round(((5 /9) * (temperature - 32)));
 	}
 
-	static convertCelsiusToFarenheit(temperature) {
+	static convertCelsiusToFahrenheit(temperature) {
 		return Math.round(((9 * temperature + (32 * 5)) / 5));
 	}
 	static setHTML(data) {
@@ -33,7 +33,7 @@ export class Weather {
 		cityCountry.innerHTML = `${weatherData.city}, ${weatherData.country}`;
 
 		const temperature = document.getElementById("temperature");
-		temperature.innerHTML = `${weatherData.temperature.toFixed(1)}`;
+		temperature.innerHTML = `${weatherData.temperature.toFixed(0)}`;
 
 		const degree = document.getElementById("degree");
 		degree.innerHTML = "&deg";
