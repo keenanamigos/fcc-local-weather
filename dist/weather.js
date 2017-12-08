@@ -53,7 +53,7 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = "" + weatherData.temperature;
+			temperature.innerHTML = "" + weatherData.temperature.toFixed(1);
 
 			var degree = document.getElementById("degree");
 			degree.innerHTML = "&deg";

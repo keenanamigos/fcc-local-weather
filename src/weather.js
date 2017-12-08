@@ -33,7 +33,7 @@ export class Weather {
 		cityCountry.innerHTML = `${weatherData.city}, ${weatherData.country}`;
 
 		const temperature = document.getElementById("temperature");
-		temperature.innerHTML = `${weatherData.temperature}`;
+		temperature.innerHTML = `${weatherData.temperature.toFixed(1)}`;
 
 		const degree = document.getElementById("degree");
 		degree.innerHTML = "&deg";

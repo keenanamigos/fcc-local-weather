@@ -1,6 +1,8 @@
 const Weather = require("./weather").Weather;
 
 navigator.geolocation.getCurrentPosition(position => {
+	let isFarenheit = false;
+
 	const data = {
 		endpoint: "https://fcc-weather-api.glitch.me/",
 		longitude: position.coords.longitude,
@@ -9,8 +11,22 @@ navigator.geolocation.getCurrentPosition(position => {
 
 	Weather.getWeatherByLatLong(data);
 
-	// Target C/F button and run below function on click
+	const tempBtn = document.getElementById("tempUnit");
+	tempBtn.onclick = () => {
+		isFarenheit = !isFarenheit;
+		switchMeasurements(isFarenheit);
+	};
 });
 
+function switchMeasurements(measurementBool) {
+	const temperature = parseFloat(document.getElementById("temperature").innerHTML);
 
-// Create a switchMeasurements function 
+	if (measurementBool) {
+		document.getElementById("temperature").innerHTML = Weather.convertFarenheitToCelsius(temperature);
+		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "C";
+
+	} else {
+		document.getElementById("temperature").innerHTML = Weather.convertCelsiusToFarenheit(temperature);
+		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "F";
+	}
+}

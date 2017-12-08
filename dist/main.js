@@ -73,6 +73,8 @@
 var Weather = __webpack_require__(1).Weather;
 
 navigator.geolocation.getCurrentPosition(function (position) {
+	var isFarenheit = false;
+
 	var data = {
 		endpoint: "https://fcc-weather-api.glitch.me/",
 		longitude: position.coords.longitude,
@@ -81,10 +83,24 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
 	Weather.getWeatherByLatLong(data);
 
-	// Target C/F button and run below function on click
+	var tempBtn = document.getElementById("tempUnit");
+	tempBtn.onclick = function () {
+		isFarenheit = !isFarenheit;
+		switchMeasurements(isFarenheit);
+	};
 });
 
-// Create a switchMeasurements function
+function switchMeasurements(measurementBool) {
+	var temperature = parseFloat(document.getElementById("temperature").innerHTML);
+
+	if (measurementBool) {
+		document.getElementById("temperature").innerHTML = Weather.convertFarenheitToCelsius(temperature);
+		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "C";
+	} else {
+		document.getElementById("temperature").innerHTML = Weather.convertCelsiusToFarenheit(temperature);
+		document.getElementsByClassName("temp-btn-text")[0].innerHTML = "F";
+	}
+}
 
 /***/ }),
 /* 1 */
@@ -146,7 +162,7 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = "" + weatherData.temperature;
+			temperature.innerHTML = "" + weatherData.temperature.toFixed(1);
 
 			var degree = document.getElementById("degree");
 			degree.innerHTML = "&deg";
