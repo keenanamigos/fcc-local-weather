@@ -8,4 +8,9 @@ navigator.geolocation.getCurrentPosition(position => {
 	};
 
 	Weather.getWeatherByLatLong(data);
+
+	// Target C/F button and run below function on click
 });
+
+
+// Create a switchMeasurements function 

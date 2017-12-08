@@ -80,9 +80,11 @@ navigator.geolocation.getCurrentPosition(function (position) {
 	};
 
 	Weather.getWeatherByLatLong(data);
-});
-//# sourceMappingURL=main.js.map
 
+	// Target C/F button and run below function on click
+});
+
+// Create a switchMeasurements function
 
 /***/ }),
 /* 1 */
@@ -144,7 +146,13 @@ var Weather = exports.Weather = function () {
 			cityCountry.innerHTML = weatherData.city + ", " + weatherData.country;
 
 			var temperature = document.getElementById("temperature");
-			temperature.innerHTML = weatherData.temperature + " &deg<button class=\"temp-btn\" id=\"tempUnit\"><span class=\"temp-btn-text\">C</span></button>";
+			temperature.innerHTML = "" + weatherData.temperature;
+
+			var degree = document.getElementById("degree");
+			degree.innerHTML = "&deg";
+
+			var tempBtnText = document.getElementsByClassName("temp-btn-text")[0];
+			tempBtnText.innerHTML = "C";
 
 			var weatherStatus = document.getElementById("weatherStatus");
 			weatherStatus.innerHTML = weatherData.weatherStatus;
@@ -159,8 +167,6 @@ var Weather = exports.Weather = function () {
 
 	return Weather;
 }();
-//# sourceMappingURL=weather.js.map
-
 
 /***/ }),
 /* 2 */
@@ -197,8 +203,6 @@ var WeatherData = exports.WeatherData = function () {
 
 	return WeatherData;
 }();
-//# sourceMappingURL=weatherData.js.map
-
 
 /***/ }),
 /* 3 */
@@ -235,8 +239,6 @@ var ObjectHelper = exports.ObjectHelper = function () {
 
 	return ObjectHelper;
 }();
-//# sourceMappingURL=objectHelper.js.map
-
 
 /***/ })
 /******/ ]);

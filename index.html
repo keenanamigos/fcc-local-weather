@@ -14,10 +14,17 @@
             <header>
                 <h1>Free Code Camp Weather App</h1>
             </header>
-
+            <!-- Want the temperature in it's own span -->
+            <!-- Want the degree and the measurement symbol next to each other similar to CodePen -->
             <main>
                 <p id="cityCountry"></p>
-                <p id="temperature"></p>
+                <p >
+                    <span id="temperature"></span>
+                    
+                    <button class="temp-btn" id="tempUnit">
+                        <span id="degree"></span><span class="temp-btn-text"></span>
+                    </button>
+                </p>
                 <p id="weatherStatus"></p>
                 <img id="icon"/>
             </main>

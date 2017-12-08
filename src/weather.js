@@ -33,7 +33,13 @@ export class Weather {
 		cityCountry.innerHTML = `${weatherData.city}, ${weatherData.country}`;
 
 		const temperature = document.getElementById("temperature");
-		temperature.innerHTML = `${weatherData.temperature} &deg<button class="temp-btn" id="tempUnit"><span class="temp-btn-text">C</span></button>`;
+		temperature.innerHTML = `${weatherData.temperature}`;
+
+		const degree = document.getElementById("degree");
+		degree.innerHTML = "&deg";
+
+		const tempBtnText = document.getElementsByClassName("temp-btn-text")[0];
+		tempBtnText.innerHTML = "C";
         
 		const weatherStatus = document.getElementById("weatherStatus");
 		weatherStatus.innerHTML = weatherData.weatherStatus;
