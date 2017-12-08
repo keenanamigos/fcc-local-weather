@@ -135,7 +135,7 @@ var Weather = exports.Weather = function () {
 				var loadingAnimation = document.getElementsByClassName("loader")[0];
 				loadingAnimation.style.display = "none";
 			});
-			var route = "api/current?lon=" + data.longitude + "&lat=" + data.latitude;
+			var route = "api/current?lon=" + encodeURIComponent(data.longitude) + "&lat=" + encodeURIComponent(data.latitude);
 			xhr.open("GET", "" + data.endpoint + route, false);
 			xhr.send();
 			var response = JSON.parse(xhr.responseText);

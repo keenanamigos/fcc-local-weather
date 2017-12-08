@@ -9,8 +9,9 @@ export class Weather {
 
 			const loadingAnimation = document.getElementsByClassName("loader")[0];
 			loadingAnimation.style.display = "none";
+			
 		});
-		const route = `api/current?lon=${data.longitude}&lat=${data.latitude}`;
+		const route = `api/current?lon=${encodeURIComponent(data.longitude)}&lat=${encodeURIComponent(data.latitude)}`;
 		xhr.open("GET", `${data.endpoint}${route}`, false);
 		xhr.send();
 		const response = JSON.parse(xhr.responseText);
