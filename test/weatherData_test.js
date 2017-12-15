@@ -1,6 +1,6 @@
 /* global describe it */
-const expect = require("chai").expect;
-const WeatherData = require("../dist/weatherData").WeatherData;
+import { expect }  from "chai";
+import { WeatherData } from "../src/weatherData";
 
 describe("WeatherData", () => {
 	describe("create", () => {

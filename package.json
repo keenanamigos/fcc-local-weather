@@ -31,9 +31,9 @@
     "sass-lint": "^1.12.1"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --compilers js:babel-core/register",
     "start": "http-server -p 9000",
-    "build": "eslint src/*.js test/*.js && mocha && babel src -d dist && webpack",
+    "build": "eslint src/*.js test/*.js && mocha --compilers js:babel-core/register && babel src -d dist && webpack",
     "lint": "eslint src/*.js test/*.js",
     "lint-fix": "eslint --fix src/*.js test/*.js"
   },
