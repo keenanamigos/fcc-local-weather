@@ -33,7 +33,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "start": "http-server -p 9000",
-    "build": "eslint src/*.js test/*.js && mocha --compilers js:babel-core/register && babel src -d dist && webpack",
+    "build": "npm run lint && npm run test && babel src -d dist && webpack",
     "lint": "eslint src/*.js test/*.js",
     "lint-fix": "eslint --fix src/*.js test/*.js"
   },
